@@ -1,0 +1,276 @@
+flowchart LR
+    %% SPARKEN CLIENT PROJECT PROCESS
+    %% High contrast version with no "PENDING" labels
+    
+    subgraph STAGE1["🔵 STAGE 1: DISCOVER & QUALIFY - Week 0-1"]
+        direction TB
+        
+        subgraph DANIELA1["DANIELA - Client Success & Delivery Owner"]
+            direction LR
+            D1A["Discovery Call<br/>30 min<br/>Fit checklist"]
+            D1B["Process Explanation<br/>No guarantees<br/>Transparent pricing"]
+            D1C["Create Proposal<br/>within 48hr"]
+            D1D{"Alignment<br/>Clear?"}
+            D1E["⚠ Decline or<br/>Refer Out"]
+            D1F["Contract &<br/>Deposit Collection"]
+            D1G["Intake & Asset<br/>Kickoff Scheduling"]
+            D1H["📄 Proposal &<br/>Contract"]
+            
+            D1A --> D1B --> D1C --> D1D
+            D1D -->|NO| D1E
+            D1D -->|YES| D1F --> D1G --> D1H
+        end
+        
+        subgraph ANDREA1["ANDREA - Research, Technology & Validation Owner"]
+            direction LR
+            A1A["Initial Research<br/>Brief<br/>async"]
+            A1B["📄 Research<br/>Brief"]
+            
+            A1A --> A1B
+        end
+        
+        subgraph DOM1["DOM - Design Lead"]
+            direction LR
+            DO1A["Awaiting<br/>Stage 3"]
+        end
+        
+        subgraph CLIENT1["CLIENT"]
+            direction LR
+            C1A["Participate in<br/>Discovery"]
+            C1B["Review<br/>Proposal"]
+            C1C["Sign Contract<br/>Pay Deposit"]
+            
+            C1A --> C1B --> C1C
+        end
+        
+        subgraph MIGUEL1["MIGUEL - Strategy Advisor - OPTIONAL"]
+            direction LR
+            M1A["Not engaged<br/>in Stage 1"]
+        end
+        
+        D1A -.-> C1A
+        D1C -.-> C1B
+        C1C -.-> D1F
+        D1G -.-> A1A
+    end
+    
+    subgraph STAGE2["🟣 STAGE 2: RESEARCH & STRATEGY - Week 1-2"]
+        direction TB
+        
+        subgraph DANIELA2["DANIELA - Client Success & Delivery Owner"]
+            direction LR
+            D2A["Kickoff Meeting<br/>Expectations<br/>Scope clarity"]
+            D2B["Define Realistic<br/>Observable Metrics"]
+            D2C["Confirm<br/>Next Steps"]
+            
+            D2A --> D2B --> D2C
+        end
+        
+        subgraph ANDREA2["ANDREA - Research, Technology & Validation Owner"]
+            direction LR
+            A2A["Deep Discovery<br/>User behavior<br/>Motivations"]
+            A2B["Research Sprint<br/>3-5 hypotheses<br/>Behavior patterns<br/>Service layers"]
+            A2C["📄 Research<br/>Foundation<br/>8-12 pages"]
+            
+            A2A --> A2B --> A2C
+        end
+        
+        subgraph DOM2["DOM - Design Lead"]
+            direction LR
+            DO2A["Awaiting<br/>Strategy<br/>Approval"]
+        end
+        
+        subgraph CLIENT2["CLIENT"]
+            direction LR
+            C2A["Participate in<br/>Deep Discovery"]
+            C2B{"Strategy<br/>Approved?"}
+            C2C["⚠ GATE PASSED<br/>No design/build<br/>without approval"]
+            
+            C2A --> C2B --> C2C
+        end
+        
+        subgraph MIGUEL2["MIGUEL - Strategy Advisor - OPTIONAL"]
+            direction LR
+            M2A["Strategy Discussion<br/>if engaged<br/>Business strategy<br/>Funnel thinking"]
+        end
+        
+        D2A -.-> C2A
+        A2A -.-> C2A
+        A2C -.-> C2B
+        C2B -->|NO| A2B
+        M2A -.-> A2B
+    end
+    
+    subgraph STAGE3["🟠 STAGE 3: DESIGN & BUILD - Week 2-5 - ⚡ PARALLEL WORK"]
+        direction TB
+        
+        subgraph DANIELA3["DANIELA - Client Success & Delivery Owner"]
+            direction LR
+            D3A["Client Communication<br/>Status updates<br/>Loom recaps"]
+            D3B["Scope Guardrails<br/>Documented"]
+            
+            D3A --> D3B
+        end
+        
+        subgraph ANDREA3["ANDREA - Research, Technology & Validation Owner + Customized Websites"]
+            direction LR
+            A3A["Website<br/>Architecture<br/>+ Build"]
+            A3B["Integrations &<br/>Deployment"]
+            A3C["Analytics +<br/>Tracking"]
+            A3D["Research<br/>Validation"]
+            A3E["📄 Customized Website<br/>Integrations<br/>Analytics<br/>Research Validation"]
+            
+            A3A --> A3B --> A3C --> A3D --> A3E
+        end
+        
+        subgraph DOM3["DOM - Design Lead - Branding + Template Websites<br/>Does NOT own tech, bugs, timelines, deployments"]
+            direction LR
+            DO3A["Send Brand/Website<br/>Questionnaire"]
+            DO3B["Wait for<br/>Response"]
+            DO3C["Concept<br/>Explorations"]
+            DO3D["Refinement<br/>Full System<br/>Guidelines"]
+            DO3E["⚠ Revision Rounds<br/>BOUNDARY: 3<br/>Extra = fee"]
+            DO3F["📄 Brand Identity<br/>Website Visuals<br/>Guidelines"]
+            
+            DO3A --> DO3B --> DO3C --> DO3D --> DO3E --> DO3F
+        end
+        
+        subgraph CLIENT3["CLIENT"]
+            direction LR
+            C3A["Complete<br/>Questionnaire"]
+            C3B["Provide Feedback<br/>on Designs"]
+            C3C["Revision Requests<br/>& Communication"]
+            
+            C3A --> C3B --> C3C
+        end
+        
+        subgraph MIGUEL3["MIGUEL - Strategy Advisor - OPTIONAL"]
+            direction LR
+            M3A["Not typically<br/>engaged<br/>in Stage 3"]
+        end
+        
+        DO3A -.-> C3A
+        C3A -.-> DO3B
+        DO3D -.-> C3B
+        C3B -.-> DO3E
+        D3A -.-> C3C
+    end
+    
+    subgraph STAGE4["🟢 STAGE 4: DELIVERY & LAUNCH - Week 5+<br/>💡 Launch is not victory - learning begins here"]
+        direction TB
+        
+        PF["🔄 INTERNAL PRE-FLIGHT SYNC<br/>Andrea: Research validated ✓<br/>Dom: Design verified ✓<br/>Daniela: Scope confirmed ✓"]
+        
+        subgraph DANIELA4["DANIELA - Client Success & Delivery Owner"]
+            direction LR
+            D4A["Final Review<br/>Coordination"]
+            D4B["Walkthrough<br/>Tech + handoff"]
+            D4C["Feedback Window<br/>Management"]
+            D4D["Final Payment<br/>Collection"]
+            D4E["Post-Launch<br/>Support"]
+            
+            D4A --> D4B --> D4C --> D4D --> D4E
+        end
+        
+        subgraph ANDREA4["ANDREA - Research, Technology & Validation Owner"]
+            direction LR
+            A4A["Research<br/>Application<br/>Explained"]
+            A4B["Technical Docs<br/>Provided"]
+            A4C["📄 Technical Docs<br/>Research Summary"]
+            
+            A4A --> A4B --> A4C
+        end
+        
+        subgraph DOM4["DOM - Design Lead"]
+            direction LR
+            DO4A["Brand/Design<br/>Verified ✓"]
+            DO4B["📄 Final Design<br/>Files"]
+            
+            DO4A --> DO4B
+        end
+        
+        subgraph CLIENT4["CLIENT"]
+            direction LR
+            C4A["Final Review<br/>Walkthrough"]
+            C4B["Feedback<br/>Window"]
+            C4C["Final<br/>Payment"]
+            C4D["📦 DELIVERY PACKAGE<br/>Brand OR Website Files<br/>Guidelines<br/>Research<br/>Technical Docs"]
+            
+            C4A --> C4B --> C4C --> C4D
+        end
+        
+        subgraph MIGUEL4["MIGUEL - Strategy Advisor - OPTIONAL"]
+            direction LR
+            M4A["Not engaged<br/>in Stage 4"]
+        end
+        
+        PF --> D4A
+        D4A -.-> C4A
+        A4A -.-> D4B
+        DO4A -.-> PF
+        C4C -.-> D4D
+        D4E -.-> C4D
+    end
+    
+    %% Stage transitions
+    STAGE1 ==> STAGE2
+    STAGE2 ==> STAGE3
+    STAGE3 ==> STAGE4
+    
+    %% ═══════════════════════════════════════════════════════════════
+    %% STYLE DEFINITIONS - High contrast with dark text
+    %% ═══════════════════════════════════════════════════════════════
+    
+    %% Stage background colors - light backgrounds with DARK TEXT
+    style STAGE1 fill:#E3F2FD,stroke:#1565C0,stroke-width:4px,color:#000000
+    style STAGE2 fill:#F3E5F5,stroke:#6A1B9A,stroke-width:4px,color:#000000
+    style STAGE3 fill:#FFF3E0,stroke:#E65100,stroke-width:4px,color:#000000
+    style STAGE4 fill:#E8F5E9,stroke:#1B5E20,stroke-width:4px,color:#000000
+    
+    %% Swimlane owner labels - WHITE backgrounds with DARK TEXT for maximum contrast
+    style DANIELA1 fill:#FFFFFF,stroke:#1565C0,stroke-width:2px,color:#000000
+    style ANDREA1 fill:#FFFFFF,stroke:#1565C0,stroke-width:2px,color:#000000
+    style DOM1 fill:#FFFFFF,stroke:#1565C0,stroke-width:2px,color:#000000
+    style CLIENT1 fill:#FFFFFF,stroke:#1565C0,stroke-width:2px,color:#000000
+    style MIGUEL1 fill:#FFFFFF,stroke:#1565C0,stroke-width:1px,stroke-dasharray:5 5,color:#000000
+    
+    style DANIELA2 fill:#FFFFFF,stroke:#6A1B9A,stroke-width:2px,color:#000000
+    style ANDREA2 fill:#FFFFFF,stroke:#6A1B9A,stroke-width:2px,color:#000000
+    style DOM2 fill:#FFFFFF,stroke:#6A1B9A,stroke-width:2px,color:#000000
+    style CLIENT2 fill:#FFFFFF,stroke:#6A1B9A,stroke-width:2px,color:#000000
+    style MIGUEL2 fill:#FFFFFF,stroke:#6A1B9A,stroke-width:1px,stroke-dasharray:5 5,color:#000000
+    
+    style DANIELA3 fill:#FFFFFF,stroke:#E65100,stroke-width:2px,color:#000000
+    style ANDREA3 fill:#FFFFFF,stroke:#E65100,stroke-width:2px,color:#000000
+    style DOM3 fill:#FFFFFF,stroke:#E65100,stroke-width:2px,color:#000000
+    style CLIENT3 fill:#FFFFFF,stroke:#E65100,stroke-width:2px,color:#000000
+    style MIGUEL3 fill:#FFFFFF,stroke:#E65100,stroke-width:1px,stroke-dasharray:5 5,color:#000000
+    
+    style DANIELA4 fill:#FFFFFF,stroke:#1B5E20,stroke-width:2px,color:#000000
+    style ANDREA4 fill:#FFFFFF,stroke:#1B5E20,stroke-width:2px,color:#000000
+    style DOM4 fill:#FFFFFF,stroke:#1B5E20,stroke-width:2px,color:#000000
+    style CLIENT4 fill:#FFFFFF,stroke:#1B5E20,stroke-width:2px,color:#000000
+    style MIGUEL4 fill:#FFFFFF,stroke:#1B5E20,stroke-width:1px,stroke-dasharray:5 5,color:#000000
+    
+    %% Pre-flight box - light background with dark text
+    style PF fill:#E8F8F5,stroke:#1B5E20,stroke-width:3px,color:#000000
+    
+    %% ═══════════════════════════════════════════════════════════════
+    %% CLASS DEFINITIONS - Individual box colors with HIGH CONTRAST
+    %% ═══════════════════════════════════════════════════════════════
+    
+    classDef decision fill:#FFE5B4,stroke:#E65100,stroke-width:3px,color:#000000
+    classDef deliverable fill:#FFF9E5,stroke:#F57C00,stroke-width:3px,color:#000000
+    classDef warning fill:#FFCDD2,stroke:#C62828,stroke-width:2px,color:#000000
+    classDef normalBox fill:#FFFFFF,stroke:#424242,stroke-width:1px,color:#000000
+    
+    %% Apply classes to boxes
+    class D1D,C2B decision
+    class D1H,A1B,A2C,A3E,DO3F,A4C,DO4B,C4D deliverable
+    class D1E,C2C,DO3E warning
+    
+    %% Normal boxes - pure white with dark text
+    class D1A,D1B,D1C,D1F,D1G,A1A,DO1A,C1A,C1B,C1C,M1A normalBox
+    class D2A,D2B,D2C,A2A,A2B,DO2A,C2A,M2A normalBox
+    class D3A,D3B,A3A,A3B,A3C,A3D,DO3A,DO3B,DO3C,DO3D,C3A,C3B,C3C,M3A normalBox
+    class D4A,D4B,D4C,D4D,D4E,A4A,A4B,DO4A,C4A,C4B,C4C,M4A normalBox
